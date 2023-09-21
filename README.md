@@ -1,12 +1,62 @@
 # Adventure Snapshot
 
-[Live Demo](https://my-image-gallery-opal.vercel.app/)
+[Live Demo](https://adventure-snap-shot.vercel.app/)
  you can login with
  Please consider logging in with ⬇️ this information(_work in progress_)
  email:<snapshot@test.com>
- password: text12345
+ password: test12345
 
 ## Features
 
+- sign up and sign in
 - Search Photos by the nature of Photo
 - Sortable: Drag and Drop
+- Responsive Design
+
+## coming soon
+
+- Dark mode support
+- loading icon
+- sign up functionality
+- add photo from computer
+
+## Getting Started
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+
+- node v18.17.1
+- Firebase account + project config keys visit
+
+### Setup
+
+Clone this repository
+
+### Install
+
+Install this project with:
+
+```
+  - git clone https://github.com/MaryRichelle/AdventureSnapShot.git
+  - cd AdventureSnapShot
+  - npm/yarn  install 
+```
+
+Create a .env file for environment variables. sample below
+
+VITE_API_KEY='your pixabay api key'
+VITE_FIREBASE_API_KEY='firebase api key'
+VITE_AUTH_DOMAIN='firebase auth domain'
+VITE_PROJECT_ID='firebaseproject id'
+VITE_STORAGE_BUCKET='firebase storage bucket'
+VITE_MESSAGING_SENDER_ID='firebase messaging sender id'
+VITE_APP_ID='firebase app id'
+
+### Usage
+
+To run the project, execute the following command:
+
+  npm/yarn start
