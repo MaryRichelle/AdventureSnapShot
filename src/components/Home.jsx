@@ -105,7 +105,7 @@ const Home = () => {
         <H1><MdCameraOutdoor size={40} color="#0d806d"/>AdventureSnapshots</H1>
         <SubHeading>Adventure , Capture and Save your memories </SubHeading>
         <ButtonContainer>
-          <Button to="signUp">Sign Up </Button>
+          <Button to="signup">Sign Up </Button>
           <Button to="login"> Log In</Button>
         </ButtonContainer>
       </ LeftSection>
