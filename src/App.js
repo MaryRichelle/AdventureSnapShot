@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import SignUp from "./form/SignUp";
+import LogInform from "./form/LogInform";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import Home from "./components/Home"
+import MainPage from "./components/MainPage"
+// function RequireAuth({ children }) {
+// You can add your authentication logic here
+// For example, check if the user is authenticated and return children if true
+// Otherwise, navigate to the login page
+// const currentUser = false;
+// if (currentUser) {
+//   return children;
+// } else {
+//   return <Navigate to="/login" />;
+// }
+// }
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/signUp" element={<SignUp></SignUp>} />
+          <Route path="/login" element={<LogInform />} />
+          <Route path="gallery" element={<MainPage/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }
