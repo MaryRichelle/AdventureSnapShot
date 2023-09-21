@@ -1,10 +1,10 @@
 # Adventure Snapshot
 
-[Live Demo](https://adventure-snap-shot.vercel.app/)
- you can login with
+[Live Demo ↗️](https://adventure-snap-shot.vercel.app/)
  Please consider logging in with ⬇️ this information(_work in progress_)
- email:<snapshot@test.com>
- password: test12345
+
+- email:<snapshot@test.com>
+- password: test12345
 
 ## Features
 
@@ -47,16 +47,17 @@ Install this project with:
 
 Create a .env file for environment variables. sample below
 
-VITE_API_KEY='your pixabay api key'
-VITE_FIREBASE_API_KEY='firebase api key'
-VITE_AUTH_DOMAIN='firebase auth domain'
-VITE_PROJECT_ID='firebaseproject id'
-VITE_STORAGE_BUCKET='firebase storage bucket'
-VITE_MESSAGING_SENDER_ID='firebase messaging sender id'
-VITE_APP_ID='firebase app id'
+- REACT_APP_FIREBASE_KEY="your firsebase api key"
+- REACT_PROJECT_ID='firebaseproject id'
+- REACT_STORAGE_BUCKET='firebase storage bucket'
+- REACT_MESSAGING_SENDER_ID='firebase messaging sender id'
+- REACT_APP_ID='firebase app id'
 
 ### Usage
 
 To run the project, execute the following command:
 
+```
   npm/yarn start
+```
+
