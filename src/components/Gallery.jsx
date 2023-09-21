@@ -14,6 +14,15 @@ flex-flow: row wrap;
 gap:2rem;
 
 `
+const NotFound = styled.h2`
+width: 20vh:
+display: flex;
+justify-content: center;
+align-items:center ;
+text-align: center;
+color: #f0a5a5;
+margin-top: 10rem; 
+`
 const Gallery = () => {
   const { searchResults, unsplashPhotosDetails } = useContext(PhotoContext)
   const [photos, setPhotos] = useState([])
@@ -40,16 +49,17 @@ const Gallery = () => {
       <SortableContext items={photos} strategy={rectSortingStrategy}>
         <Container>
           {
-            photos && photos.filter(photo => {
-              if (!searchResults) {
-                return true
-              } else if (photo.tag.some(tag => tag === searchResults)) {
-                return photo
-              }
-            }).map(photo => (
-              <Images photo={photo} key={photo.id} />
-            ))
+            photos &&
+            (searchResults
+              ? photos
+                .filter(photo => photo.tag.some(tag => tag === searchResults))
+                .map(photo => <Images photo={photo} key={photo.id} />)
+              : undefined
+                ? <NotFound>No photos found.</NotFound>
+                : photos.map(photo => <Images photo={photo} key={photo.id} />)
+            )
           }
+
         </Container>
       </SortableContext>
     </DndContext>

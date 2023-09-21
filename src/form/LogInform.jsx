@@ -22,7 +22,7 @@ padding: 3px;
 `
 const Form = styled.form`
 background: rgb(242, 242, 242);
-background: rgb(253, 253, 253);
+border: 1px solid #c6c7c7;
 border-radius: 15px;
 width:60%;
 height:60%;

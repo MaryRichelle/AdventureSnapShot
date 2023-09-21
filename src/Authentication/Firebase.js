@@ -4,13 +4,13 @@ import { getAnalytics } from "firebase/analytics";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAt_rwtlht-FOz4opSRta6xCRjGpBjFkko",
+  apiKey: process.env.REACT_APP_FIREBASE_KEY,
   authDomain: "image-gallery-312d1.firebaseapp.com",
   projectId: "image-gallery-312d1",
   storageBucket: "image-gallery-312d1.appspot.com",
   messagingSenderId: "image-gallery-312d1.appspot.com",
-  appId: "1:730756095305:web:fc080c3a57651a5d540e98",
-  measurementId: "G-0NTG11XYB7"
+  appId: process.env.REACT_APP_ID,
+  measurementId: process.env.REACT_APP_MESSAGINGSENDERID
 };
 
 const app = initializeApp(firebaseConfig);
