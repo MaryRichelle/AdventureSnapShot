@@ -1,7 +1,9 @@
+import React, { useState, useEffect } from 'react'
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import React from 'react'
 import styled from 'styled-components';
+import Loading from './Loading';
+
 
 const ImageWrapper = styled.div`
 border:1px solid #cbc8c8;
@@ -31,6 +33,7 @@ transition :all 5s ease-out;
 `;
 
 const Images = ({ photo }) => {
+  const [loading, setLoading] = useState(true)
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: photo.id })
 
   const URL = `https://source.unsplash.com/${photo.id}`;
@@ -39,11 +42,20 @@ const Images = ({ photo }) => {
     transition,
     transform: CSS.Transform.toString(transform)
   }
-
+  useEffect(() => {
+    // Simulate an asynchronous task (e.g., fetching data)
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000); // Simulated 2-second loading time
+  }, []);
   return (
     <ImageWrapper ref={setNodeRef} style={style}  {...attributes} {...listeners}>
-      <Image src={URL} alt={"nature"} />
-
+      {
+      loading ? (
+      <Loading />
+      ) : (
+      <Image src={URL} alt={"nature"}  loading="lazy" />
+       )} 
     </ImageWrapper>
   )
 }
