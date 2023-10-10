@@ -8,6 +8,7 @@ import { PhotoContext } from "../Context/PhotosContext"
 
 const Container = styled.section`
 width:90%;
+min-height:80vh;
 margin:auto;
 display: flex;
 flex-flow: row wrap;

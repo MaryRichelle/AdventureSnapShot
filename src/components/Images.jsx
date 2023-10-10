@@ -6,6 +6,7 @@ import Loading from './Loading';
 
 
 const ImageWrapper = styled.div`
+background: #cbc8c8;
 border:1px solid #cbc8c8;
 margin:auto;
 width: 25%;
@@ -43,19 +44,19 @@ const Images = ({ photo }) => {
     transform: CSS.Transform.toString(transform)
   }
   useEffect(() => {
-    // Simulate an asynchronous task (e.g., fetching data)
+
     setTimeout(() => {
       setLoading(false);
-    }, 1000); // Simulated 2-second loading time
+    }, 1000);
   }, []);
   return (
     <ImageWrapper ref={setNodeRef} style={style}  {...attributes} {...listeners}>
       {
-      loading ? (
-      <Loading />
-      ) : (
-      <Image src={URL} alt={"nature"}  loading="lazy" />
-       )} 
+        loading ? (
+          <Loading />
+        ) : (
+          <Image src={URL} alt={"nature"} loading="lazy" />
+        )}
     </ImageWrapper>
   )
 }

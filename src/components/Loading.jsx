@@ -18,9 +18,9 @@ color : #0d806d;
     }
   }
 `;
-const Loading = () => { 
+const Loading = () => {
   return (
-    <Spinner/>
+    <Spinner />
   )
 }
 

@@ -15,6 +15,8 @@ border: none;
 outline:none;
 font-family:initial;
 font-size: 15px;
+background:inherit;
+color:inherit;
 `
 const SearchIcon = styled(AiOutlineSearch)`
 cursor:pointer;
@@ -24,22 +26,22 @@ cursor:pointer;
 }
 `
 const Search = () => {
-  const { setSearchResult }= useContext(PhotoContext)
+  const { setSearchResult } = useContext(PhotoContext)
   const [query, setQuery] = useState("")
 
-  function handleChange(e){
+  function handleChange(e) {
     setQuery(e.target.value)
-  
+
   }
-  const handleSearch =()=>{
+  const handleSearch = () => {
     setSearchResult(query.toLowerCase().trim())
   }
- 
+
   return (
     <SearchContainer>
-      <Input type='text' placeholder="Try Nature, Tree" onChange={ handleChange
-      }/>
-      <SearchIcon onClick={handleSearch}/>
+      <Input type='text' placeholder="Try Nature, Tree" onChange={handleChange
+      } />
+      <SearchIcon onClick={handleSearch} />
     </SearchContainer>
   )
 }

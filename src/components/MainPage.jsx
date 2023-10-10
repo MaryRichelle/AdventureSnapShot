@@ -12,15 +12,15 @@ gap:4rem;
 `
 
 
-const MainPage= ()=>{
+const MainPage = () => {
 
 
-  return(
+  return (
     <Main>
-    <Nav/>
-    <Gallery/>
+      <Nav />
+      <Gallery />
     </Main>
-    )
+  )
 
 }
 export default MainPage;
