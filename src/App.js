@@ -4,6 +4,7 @@ import LogInform from "./form/LogInform";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home"
 import MainPage from "./components/MainPage"
+import YourGallery from "./components/YourGallery"
 import { ThemesContext } from "./Context/ThemeContext"
 
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" exact element={<Home />} />
           <Route path="/signUp" element={<SignUp/>} />
           <Route path="/login" element={<LogInform />} />
+          <Route path="/your_gallery" element={<YourGallery />}/>
           <Route path="/gallery" element={<MainPage/>}/>
         </Routes>
       </Router>

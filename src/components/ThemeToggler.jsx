@@ -9,7 +9,7 @@ const SwitchContainer = styled.label`
 position:relative;
 display:inline-block;
 cursor:pointer;
-width:60px;
+min-width:60px;
 height:30px;
 background-color:#0d806d;
 border-radius: 30px;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { LiaUserShieldSolid } from "react-icons/lia"
 import { AiOutlineMail } from "react-icons/ai"
@@ -24,7 +25,8 @@ const Form = styled.form`
 background: rgb(242, 242, 242);
 border: 1px solid #c6c7c7;
 border-radius: 15px;
-width:60%;
+
+width:max(50%,20rem);
 height:60%;
 display: flex;
 flex-direction:column;
@@ -35,7 +37,7 @@ padding:10px;
 `
 
 
-const InputContainer = styled.div`
+const InputContainer = styled.label`
 background: #fff;
 width:100%;
 border: 1px solid #c6c7c7;
@@ -44,7 +46,8 @@ border-radius: 4px;
 display: flex;
 align-items:center;
 padding:5px;
-`
+gap:2rem;`
+
 const Input = styled.input`
 width:100%;
 border:none;
@@ -52,6 +55,8 @@ outline:none;
 border-radius: 4px;
 font-weight: 600;
 color:gray;
+font-family:normal;
+
 `
 const SubmitBtn = styled.button`
 width:100%;
@@ -62,18 +67,23 @@ padding:15px;
 font-weight: 800;
 border:1px solid gray;
 background: #23bba2;
-color: #fff;
 font-size: 1.2rem;
 transition:.5s ease all ;
 
 `
-const Link = styled.a`
-text-decoration:none;
-color:#05bfa0
-`
+
 const ErrorSpan = styled.span`
 color: #f51f1f
 `
+const P = styled.p`
+color:black;
+`
+const Links = styled(Link)`
+text-decoration:none;
+color:#05bfa0;
+cursor: pointer;
+`
+
 
 const LogInform = () => {
  const navigate = useNavigate()
@@ -107,15 +117,16 @@ const LogInform = () => {
         }
         <InputContainer>
           <AiOutlineMail size={30} color='#23bba2' />
-          <Input type="email" name="email" onChange={e => { setEmail(e.target.value) }} placeholder="Email" />
+          <Input type="email" required name="email" onChange={e => { setEmail(e.target.value) }} placeholder="Email" />
         </InputContainer>
         <InputContainer>
           < FaKey size={30} color='gray' />
           <Input type="password"
-            name="password" placeholder="Password" onChange={e => { setPassword(e.target.value) }} />
+            name="password" required placeholder="Password" onChange={e => { setPassword(e.target.value) }} />
         </InputContainer>
         <SubmitBtn type="submit">Log In</SubmitBtn>
-        <p> <em>Don't Have an Account? <Link href="http://">SIgn Up</Link></em></p>
+        <P> Don't Have an Account? </P> 
+        <Links to="/signup">SIgn Up</Links>
 
       </Form>
     </Container>

@@ -7,6 +7,7 @@ import ThemeToggler from './ThemeToggler'
 const Navbar = styled.nav`
 width:100vw;
 padding-block:15px;
+background:inherit;
 display:flex;
 justify-content: space-around;
 align-items:center;
@@ -19,15 +20,21 @@ const Links = styled(Link)`
 text-decoration: none;
 color:inherit;
 `
+const RightSide = styled.div`
+display:flex;
+align-items:center;
+gap:1rem;`
+
 const Nav = () => {
   return (
     <Navbar>
-      <Links to="/gallery"><MdCameraOutdoor />AdventureSnapshots</Links>
+      <Links to="/gallery"><MdCameraOutdoor color="#0d806d" />AdventureSnapshots</Links>
+      <Link to='/your_gallery'>Your Gallery</Link>
       <Search />
-      <div>
+      <RightSide>
         <ThemeToggler />
         <Links to="/">Logout</Links>
-      </div>
+      </RightSide>
     </Navbar>
   )
 }

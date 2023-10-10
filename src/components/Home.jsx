@@ -3,7 +3,7 @@ import { MdCameraOutdoor } from "react-icons/md"
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import ThemeToggler from "./ThemeToggler"
-
+import { devices } from "../Css/Breakpoints"
 
 const Container = styled.main`
 padding:4rem;
@@ -22,21 +22,26 @@ const LeftSection = styled.section`
  gap:6rem;
  `
 const H1 = styled.h1`
- font-size:3rem;
+ font-size:1em;
+ @media only screen and ${devices.md}{
+font-size:2em;
+}
  
  `
 const SubHeading = styled.p`
- font-size:2rem;
- transform: SkewY(-8deg);
- color:#0d806d;
+ font-size:1.2rem;
+ transform: SkewY(-5deg);
+  @media only screen and ${devices.md}{
+font-size:2rem;
+}
  `
 const RightSide = styled.section`
 
  `
 const ButtonContainer = styled.div`
 display: flex;
- width: 50%;
  display:flex;
+ gap:1.2rem;
  justify-content: space-around;
  align-items: center;
 
@@ -45,9 +50,13 @@ const Button = styled(Link)`
  background:#0d806d;
 color:#faf7f7;
  text-decoration: none;
-padding: .5rem;
+padding: .3rem;
 border: 1px solid #0d806d;
 border-radius: 10px;
+ @media only screen and ${devices.md}{
+  padding: .5rem;
+
+}
  `
 const ImageWrapper = styled.div`
   border:1px solid #cbc8c8;
