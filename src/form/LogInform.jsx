@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { LiaUserShieldSolid } from "react-icons/lia"
 import { AiOutlineMail } from "react-icons/ai"
 import { FaKey } from "react-icons/fa"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../Authentication/Firebase"
-import { useNavigate } from 'react-router-dom'
 
 const Container = styled.section`
 display:flex;
@@ -25,7 +24,6 @@ const Form = styled.form`
 background: rgb(242, 242, 242);
 border: 1px solid #c6c7c7;
 border-radius: 15px;
-
 width:max(50%,20rem);
 height:60%;
 display: flex;
@@ -86,7 +84,7 @@ cursor: pointer;
 
 
 const LogInform = () => {
- const navigate = useNavigate()
+  const navigate = useNavigate()
   const [error, setError] = useState(false)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("");
@@ -95,14 +93,16 @@ const LogInform = () => {
     e.preventDefault()
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in 
         const user = userCredential.user;
-        navigate("/gallery")
+        if (user) {
+          navigate("/gallery")
+        }
       })
       .catch((error) => {
         setError(true)
         const errorCode = error.code;
         const errorMessage = error.message;
+        setError(errorMessage)
       });
   }
 
@@ -125,7 +125,7 @@ const LogInform = () => {
             name="password" required placeholder="Password" onChange={e => { setPassword(e.target.value) }} />
         </InputContainer>
         <SubmitBtn type="submit">Log In</SubmitBtn>
-        <P> Don't Have an Account? </P> 
+        <P> Don't Have an Account? </P>
         <Links to="/signup">SIgn Up</Links>
 
       </Form>
