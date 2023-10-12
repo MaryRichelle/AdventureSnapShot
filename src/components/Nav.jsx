@@ -4,7 +4,9 @@ import Search from './Search'
 import { Link } from 'react-router-dom'
 import { MdCameraOutdoor } from "react-icons/md"
 import ThemeToggler from './ThemeToggler'
+
 const Navbar = styled.nav`
+max-height:5rem;
 width:100vw;
 padding-block:15px;
 background:inherit;
@@ -29,7 +31,7 @@ const Nav = () => {
   return (
     <Navbar>
       <Links to="/gallery"><MdCameraOutdoor color="#0d806d" />AdventureSnapshots</Links>
-      <Link to='/your_gallery'>Your Gallery</Link>
+      <Links to='/your_gallery'>Your Gallery</Links>
       <Search />
       <RightSide>
         <ThemeToggler />

@@ -18,7 +18,7 @@ const MainPage = () => {
 
   return (
     <Main>
-      <Nav />
+     
       <Gallery />
     </Main>
   )
