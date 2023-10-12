@@ -1,10 +1,7 @@
 # Adventure Snapshot
 
 [Live Demo ↗️](https://adventure-snap-shot.vercel.app/)
- Please consider logging in with ⬇️ this information(_work in progress_)
 
-- email:<snapshot@test.com>
-- password: test12345
 
 ## Features
 
@@ -12,13 +9,9 @@
 - Search Photos by the nature of Photo
 - Sortable: Drag and Drop
 - Responsive Design
-
-## coming soon
-
-- Dark mode support
-- loading icon
-- sign up functionality
-- add photo from computer
+- DarkMode/LightMode support
+- loading spinner
+- add photo from computer on the way 
 
 ## Getting Started
 
