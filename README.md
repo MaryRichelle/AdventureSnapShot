@@ -1,6 +1,6 @@
 # Adventure Snapshot
 
-[Live Demo ↗️](https://adventure-snap-shot.vercel.app/)
+[Live Demo ↗️](https://mr-adventure-snap-shot.vercel.app/)
 
 
 ## Features
@@ -11,7 +11,13 @@
 - Responsive Design
 - DarkMode/LightMode support
 - loading spinner
-- add photo from computer on the way 
+- add photo from computer (on the way)
+
+## Stack
+- React.js
+- Styled Components
+- Firebase
+ 
 
 ## Getting Started
 
