@@ -1,7 +1,7 @@
 import React from 'react'
 import Gallery from './Gallery'
 import Nav from "./Nav"
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Main = styled.main`
 display:flex;
@@ -18,7 +18,7 @@ const MainPage = () => {
 
   return (
     <Main>
-     
+      <Nav />
       <Gallery />
     </Main>
   )

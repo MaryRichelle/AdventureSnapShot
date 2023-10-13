@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home"
 import MainPage from "./components/MainPage"
 import YourGallery from "./components/YourGallery"
-import Nav from "./components/Nav"
 
 import { ThemesContext } from "./Context/ThemeContext"
 
@@ -16,7 +15,7 @@ function App() {
   return (
     <div className="App" style={{background: theme.background, color: theme.color}}>
       <Router>
-        <Nav />
+    
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/signUp" element={<SignUp/>} />

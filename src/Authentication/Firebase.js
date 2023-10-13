@@ -5,10 +5,10 @@ import { getAnalytics } from 'firebase/analytics';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
-  authDomain: 'image-gallery-312d1.firebaseapp.com',
-  projectId: 'image-gallery-312d1',
-  storageBucket: 'image-gallery-312d1.appspot.com',
-  messagingSenderId: 'image-gallery-312d1.appspot.com',
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
   appId: process.env.REACT_APP_ID,
   measurementId: process.env.REACT_APP_MESSAGINGSENDERID
 };
@@ -19,4 +19,4 @@ const auth = getAuth();
 const projectFirestore = getFirestore(app);
 const timestamp = serverTimestamp();
 
-export { auth, projectFirestore, timestamp ,app };
+export { auth, projectFirestore, timestamp, app };
