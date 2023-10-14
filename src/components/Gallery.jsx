@@ -4,6 +4,8 @@ import { DndContext, closestCenter } from '@dnd-kit/core'
 import { SortableContext, arrayMove, rectSortingStrategy } from '@dnd-kit/sortable'
 import Images from './Images'
 import { PhotoContext } from "../Context/PhotosContext"
+import Modal from './Modal'
+import { ModelSelected } from "../Context/ModalContext"
 
 
 const Container = styled.section`
@@ -25,6 +27,8 @@ color: #f0a5a5;
 margin-top: 10rem; 
 `
 const Gallery = () => {
+  const { selected } = useContext(ModelSelected)
+
   const { searchResults, unsplashPhotosDetails } = useContext(PhotoContext)
   const [photos, setPhotos] = useState([])
 
@@ -63,6 +67,8 @@ const Gallery = () => {
 
         </Container>
       </SortableContext>
+      {selected && <Modal />}
+
     </DndContext>
   )
 }

@@ -11,7 +11,6 @@ import { ThemesContext } from "./Context/ThemeContext"
 
 function App() {
   const [{ theme }] = useContext(ThemesContext)
-
   return (
     <div className="App" style={{background: theme.background, color: theme.color}}>
       <Router>
@@ -20,8 +19,8 @@ function App() {
           <Route path="/" exact element={<Home />} />
           <Route path="/signUp" element={<SignUp/>} />
           <Route path="/login" element={<LogInform />} />
-          <Route path="/your_gallery" element={<YourGallery />}/>
-          <Route path="/gallery" element={<MainPage/>}/>
+          <Route path="/gallery" element={<MainPage  />} />
+          <Route path="/your_gallery" element={<YourGallery  />}/>
         </Routes>
       </Router>
     </div>

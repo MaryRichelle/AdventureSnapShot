@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import styled from 'styled-components';
 import Loading from './Loading';
-
+import { ModelSelected } from "../Context/ModalContext"
 
 const ImageWrapper = styled.div`
 background: #cbc8c8;
@@ -30,10 +30,11 @@ const Image = styled.img`
   border: 1px solid #ccc;
   border-radius: 5px;
   transition :all 5s ease-out;
-  &:hover{opacity:0.5}
+  // &:hover{opacity:0.5}
 `;
 
 const Images = ({ photo }) => {
+  const { setSelected } = useContext(ModelSelected)
   const [loading, setLoading] = useState(true)
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: photo.id })
 
@@ -55,7 +56,7 @@ const Images = ({ photo }) => {
         loading ? (
           <Loading />
         ) : (
-          <Image src={URL} alt={"nature"} loading="lazy" />
+          <Image onDoubleClick={() => setSelected(URL)} src={URL} alt={"nature"} loading="lazy" />
         )}
     </ImageWrapper>
   )
