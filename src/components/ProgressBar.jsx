@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import useStorage from '../Hooks/useStorage'
 import styled from 'styled-components'
+import { motion } from "framer-motion"
 
 
-const ProgressEl = styled.div`
+const ProgressEl = styled(motion.div)`
 height:5px;
 background: tomato;
 transition:3s;
@@ -20,7 +21,9 @@ const ProgressBar = ({file,setFile}) => {
 
   },[url])
   return (
-    <ProgressEl style={{width: progress + "%"}}></ProgressEl>
+    <ProgressEl 
+    initial={{width:2}} 
+    animate={{width: progress + "%"}}></ProgressEl>
   )
 }
 

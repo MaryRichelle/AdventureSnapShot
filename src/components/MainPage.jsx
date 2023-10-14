@@ -2,7 +2,6 @@ import React from 'react'
 import Gallery from './Gallery'
 import Nav from "./Nav"
 import styled from 'styled-components';
-
 const Main = styled.main`
 display:flex;
 flex-direction: column;

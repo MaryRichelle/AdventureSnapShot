@@ -6,9 +6,10 @@ import Images from './Images'
 import { PhotoContext } from "../Context/PhotosContext"
 import Modal from './Modal'
 import { ModelSelected } from "../Context/ModalContext"
+import { motion } from "framer-motion"
 
 
-const Container = styled.section`
+const Container = styled(motion.section)`
 width:90%;
 min-height:80vh;
 margin:auto;

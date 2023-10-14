@@ -30,15 +30,21 @@ const Search = () => {
   const [query, setQuery] = useState("")
 
   function handleChange(e) {
-    setQuery(e.target.value)
-
+    if (e.target.value) {
+      setQuery(e.target.value)
+    }
   }
   const handleSearch = () => {
     setSearchResult(query.toLowerCase().trim())
   }
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  }
 
   return (
-    <SearchContainer>
+    <SearchContainer onKeyPress={handleKeyPress}>
       <Input type='text' placeholder="Try Nature, Tree" onChange={handleChange
       } />
       <SearchIcon onClick={handleSearch} />

@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import { ModelSelected } from "../Context/ModalContext"
 import styled from 'styled-components'
+import { motion } from "framer-motion"
 
 
-const ModalContainer = styled.section`
+const ModalContainer = styled(motion.section)`
 position: fixed;
 top: 0;
 left:0;
@@ -12,7 +13,7 @@ height: 100%;
 background: rgba(0,0,0,0.5)
 
 `
-const ModalImage = styled.img`
+const ModalImage = styled(motion.img)`
 display: block;
 max-width: 80%;
 height:80%;
@@ -20,6 +21,7 @@ margin:6rem auto;
 box-shadow: 3px 5px 7px #000;
 border:3px solid white;
 border-radius:4px;
+
 `
 
 
@@ -32,8 +34,12 @@ const Modal = () => {
     setSelected(null);
   }
   return (
-    <ModalContainer onClick={handleCloseModal} >
-      <ModalImage src={selected} alt="" />
+    <ModalContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+    onClick={handleCloseModal} >
+      <ModalImage 
+      initial={{y:"-100vh"}}
+        animate={{ y: 0 }}
+      src={selected} alt="" />
     </ModalContainer>
   )
 }
