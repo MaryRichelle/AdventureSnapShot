@@ -23,6 +23,7 @@ opacity:0.8;
 box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 &:hover {
 box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+position: relative;
  }
 `
 const Image = styled(motion.img)`
@@ -35,10 +36,21 @@ const Image = styled(motion.img)`
   transition :all 5s ease-out;
  
 `;
+const  SpanOnHover= styled.span`
+position: absolute;
+font-size: 12px ;
+color:#fff;
+// text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px
+// black;
+z-index: 1;
+transition: all .3s linear;
+font-family: normal;
+`
 
 const Images = ({ photo }) => {
   const { setSelected } = useContext(ModelSelected)
   const [loading, setLoading] = useState(true)
+  const [mouseEnter, setMouseEnter] = useState(false)
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: photo.id })
 
   const URL = `https://source.unsplash.com/${photo.id}`;
@@ -47,6 +59,8 @@ const Images = ({ photo }) => {
     transition,
     transform: CSS.Transform.toString(transform)
   }
+ 
+
   useEffect(() => {
 
     setTimeout(() => {
@@ -65,8 +79,13 @@ const Images = ({ photo }) => {
           <Image initial={{opacity:0}}
           animate= {{opacity:1}}
           transition={{delay:1}}
+              onMouseEnter={() => setMouseEnter(!mouseEnter)}
+              onMouseleave={() => setMouseEnter(mouseEnter)}
+
+
           onDoubleClick={() => setSelected(URL)} src={URL} alt={"nature"} loading="lazy" />
         )}
+      {mouseEnter && <SpanOnHover> Double Click to zoom</SpanOnHover>}
     </ImageWrapper>
   )
 }

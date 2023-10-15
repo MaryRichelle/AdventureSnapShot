@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
 import { AiOutlineSearch } from "react-icons/ai"
 import { PhotoContext } from "../Context/PhotosContext"

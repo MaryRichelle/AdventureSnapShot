@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import Search from './Search'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { MdCameraOutdoor } from "react-icons/md"
 import ThemeToggler from './ThemeToggler'
+import firebase from 'firebase/app';
+import { getAuth, signOut } from "firebase/auth";
 
 const Navbar = styled.nav`
 max-height:5rem;
@@ -28,6 +30,15 @@ align-items:center;
 gap:1rem;`
 
 const Nav = () => {
+  const navigate = useNavigate()
+  const handleLogOut = () => {
+    const auth = getAuth();
+    signOut(auth).then(() => {
+      navigate("/")
+    }).catch((error) => {
+      alert(error)
+    });
+  }
   return (
     <Navbar>
       <Links to="/gallery"><MdCameraOutdoor color="#0d806d" />AdventureSnapshots</Links>
@@ -35,7 +46,7 @@ const Nav = () => {
       <Search />
       <RightSide>
         <ThemeToggler />
-        <Links to="/">Logout</Links>
+        <Links onClick={handleLogOut}>Logout</Links>
       </RightSide>
     </Navbar>
   )

@@ -12,7 +12,9 @@ padding:1rem;
 display:flex;
 justify-content: space-between;
 align-items:center;
-
+@media only screen and ${devices.md}{
+ padding-inline:5rem;
+}
 `
 const Container = styled.main`
 padding:4rem;
@@ -37,7 +39,8 @@ const LeftSection = styled.section`
 const H1 = styled.h1`
  font-size:1em;
  @media only screen and ${devices.md}{
- font-size:2em;
+ font-size:3rem;
+ padding-inline:5rem;
 }
  
  `
