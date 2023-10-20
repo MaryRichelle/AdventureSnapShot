@@ -29,7 +29,6 @@ const UploadForm = () => {
       setFile(null)
       setError("only Jpeg and png file types are supported")
     }
-    console.log(selected);
   }
 
   return (

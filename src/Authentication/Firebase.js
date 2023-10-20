@@ -1,8 +1,8 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, serverTimestamp } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
-import { getAnalytics } from 'firebase/analytics';
-
+// import { getAnalytics } from 'firebase/analytics';
+import { getStorage } from "firebase/storage";
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -14,9 +14,9 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
 const auth = getAuth();
 const projectFirestore = getFirestore(app);
+const storage = getStorage(app);
 const timestamp = serverTimestamp();
-
-export { auth, projectFirestore, timestamp, app };
+export { auth, projectFirestore, timestamp, storage };

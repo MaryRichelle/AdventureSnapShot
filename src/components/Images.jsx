@@ -4,7 +4,7 @@ import { CSS } from '@dnd-kit/utilities';
 import styled from 'styled-components';
 import Loading from './Loading';
 import { ModelSelected } from "../Context/ModalContext"
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
 
 
 const ImageWrapper = styled(motion.div)`
@@ -36,7 +36,7 @@ const Image = styled(motion.img)`
   transition :all 5s ease-out;
  
 `;
-const  SpanOnHover= styled.span`
+const SpanOnHover = styled.span`
 position: absolute;
 font-size: 12px ;
 color:#fff;
@@ -59,7 +59,7 @@ const Images = ({ photo }) => {
     transition,
     transform: CSS.Transform.toString(transform)
   }
- 
+
 
   useEffect(() => {
 
@@ -68,22 +68,22 @@ const Images = ({ photo }) => {
     }, 500);
   }, []);
   return (
-    <ImageWrapper ref={setNodeRef} style={style}  {...attributes} {...listeners} 
-    
-    whileHover={{opacity:1}}
+    <ImageWrapper ref={setNodeRef} style={style}  {...attributes} {...listeners}
+
+      whileHover={{ opacity: 1 }}
     >
       {
         loading ? (
           <Loading />
         ) : (
-          <Image initial={{opacity:0}}
-          animate= {{opacity:1}}
-          transition={{delay:1}}
-              onMouseEnter={() => setMouseEnter(!mouseEnter)}
-              onMouseleave={() => setMouseEnter(mouseEnter)}
+          <Image initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            onMouseEnter={() => setMouseEnter(!mouseEnter)}
+            onMouseleave={() => setMouseEnter(mouseEnter)}
 
 
-          onDoubleClick={() => setSelected(URL)} src={URL} alt={"nature"} loading="lazy" />
+            onDoubleClick={() => setSelected(URL)} src={URL} alt={"nature"} loading="lazy" />
         )}
       {mouseEnter && <SpanOnHover> Double Click to zoom</SpanOnHover>}
     </ImageWrapper>
